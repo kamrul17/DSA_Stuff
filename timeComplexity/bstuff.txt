@@ -1,0 +1,25 @@
+Hey #connections
+I have successfully completed #task2 of Bharat Intern Web development Internship.
+
+
+Here are the details:
+
+#Task2: Temperature Converter 
+
+Tech used : HTML, CSS,JS
+
+IDE Used: Visual Studio Code
+
+GitHub Repo link:
+https://github.com/kamrul17/BharatInternProject1_Temperature-Converter
+
+Hosted Website Link:
+https://kamrul17.github.io/BharatInternProject1_Temperature-Converter/
+
+Showing my heartfelt gratitude to Bharat Intern for providing me this wonderful platform where I can upgrade my coding skills, my problem handling skills and many more.
+
+
+#bharatintern #temperatureconverter #websites #criticalthinking #html #css #js #internship #projects #grateful
+
+
+

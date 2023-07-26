@@ -1,0 +1,10 @@
+Time complexity: Rate of which time taken increases with respect to input size;
+1.worst case scenerio
+2.avoid constant
+3.avoid lower value.
+
+space complexity: auxilliary space (space that you take to solve the problem) + input space( the spacen that you take tp store the input).
+example:
+a=1,b=2
+c=a+b
+here a and b are input space and c is auxiliary space.
