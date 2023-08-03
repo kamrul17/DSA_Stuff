@@ -25,26 +25,49 @@ public:
         cout << " memory is free for node with data " << value << endl;
     }
 };
-
-void insertatHead(Node *&head, int data)
+// insertAtHead
+void insertatHead(Node *&tail, Node *&head, int data)
 {
-    // create a new node
-    Node *temp = new Node(data);
-    temp->next = head;
-    head = temp;
+    // if list is empty
+    if (head == NULL)
+    {
+        // create Node
+        Node *temp = new Node(data);
+        head = temp;
+        tail = temp;
+    }
+    else
+    {
+        // create a new node
+        Node *temp = new Node(data);
+        temp->next = head;
+        head = temp;
+    }
 }
-void insertatTail(Node *&tail, int data)
+// insertAttail
+void insertatTail(Node *&tail, Node *&head, int data)
 {
-    // create a new node
-    Node *temp = new Node(data);
-    tail->next = temp;
-    tail = temp;
+    // if list is empty
+    if (tail == NULL)
+    {
+        // create Node
+        Node *temp = new Node(data);
+        head = temp;
+        tail = temp;
+    }
+    else
+    {
+        // create a new node
+        Node *temp = new Node(data);
+        tail->next = temp;
+        tail = temp;
+    }
 }
 void insertAtAnyPosition(Node *&tail, Node *&head, int position, int data)
 {
     if (position == 1)
     {
-        insertatHead(head, data);
+        insertatHead(tail, head, data);
         return;
     }
 
@@ -58,7 +81,7 @@ void insertAtAnyPosition(Node *&tail, Node *&head, int position, int data)
     // inserting at last
     if (temp->next == NULL)
     {
-        insertatTail(tail, data);
+        insertatTail(tail, head, data);
         return;
     }
 
@@ -116,37 +139,39 @@ void print(Node *&head)
 }
 int main()
 {
-    Node *node1 = new Node(10);
+    // Node *node1 = new Node(10);
     // cout << node1->data << endl;
     // cout << node1->next << endl;
+
+    // Node *head = node1;
+    // Node *tail = node1;
+    // print(head);
+
+    // IF LIST IS EMPTY
+    Node *head = NULL;
+    Node *tail = NULL;
     // insertatHead
-    Node *head = node1;
+    insertatHead(tail, head, 12);
     print(head);
-    insertatHead(head, 12);
-    print(head);
-    // insertatHead(head, 14);
-    // print(head);
+
     // insertatTail
-    Node *tail = node1;
-    insertatTail(tail, 15);
+
+    insertatTail(tail, head, 15);
     print(head);
-    // insertatTail(tail, 18);
-    // print(head);
+
     // insert at any position
-    insertAtAnyPosition(tail, head, 4, 1000);
+    insertAtAnyPosition(tail, head, 3, 1000);
     print(head);
-    insertAtAnyPosition(tail, head, 5, 2000);
+    insertAtAnyPosition(tail, head, 4, 2000);
     print(head);
     insertAtAnyPosition(tail, head, 5, 3000);
     print(head);
     // cout << "head " << head->data << endl;
     // cout << "tail " << tail->data << endl;
-    deleteNode(6, head, tail);
+    deleteNode(5, head, tail);
     // deleteNode(4, head);
-
+    print(head);
     cout << "head " << head->data << endl;
     cout << "tail " << tail->data << endl;
-    print(head);
-
     return 0;
 }
