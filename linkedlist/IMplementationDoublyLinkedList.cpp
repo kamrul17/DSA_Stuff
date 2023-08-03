@@ -14,6 +14,17 @@ public:
         this->prev = NULL;
         this->next = NULL;
     }
+    ~Node()
+    {
+        int value = this->data;
+        // memory free
+        if (this->next != NULL)
+        {
+            // delete next;
+            this->next = NULL;
+        }
+        cout << " memory is free for node with data " << value << endl;
+    }
 };
 // insertAtHead
 void insertAtHead(Node *&tail, Node *&head, int data)
@@ -84,6 +95,39 @@ void insertAtAnyPosition(Node *&tail, Node *&head, int position, int data)
     temp->next = nodeToinsert;
     nodeToinsert->prev = temp;
 }
+// delete Node at any position
+void deleteNode(int position, Node *&head, Node *&tail)
+{
+    // deleting first node
+    if (position == 1)
+    {
+        Node *temp = head;
+        temp->next->prev = NULL;
+        head = temp->next;
+        temp->next = NULL;
+        delete temp;
+    }
+    else
+    {
+        Node *currentNode = head;
+        Node *previosNode = NULL;
+        int cnt = 1;
+        while (cnt < position)
+        {
+            previosNode = currentNode;
+            currentNode = currentNode->next;
+            cnt++;
+        }
+        if (currentNode->next == NULL)
+        {
+            tail = previosNode;
+        }
+        currentNode->prev = NULL;
+        previosNode->next = currentNode->next;
+        currentNode->next = NULL;
+        delete currentNode;
+    }
+}
 // traverse
 void print(Node *head)
 {
@@ -117,7 +161,7 @@ int main()
     Node *head = NULL;
     Node *tail = NULL;
     print(head);
-    cout << "length : " << getLength(head) << endl;
+    // cout << "length : " << getLength(head) << endl;
     // insertathead
     insertAtHead(tail, head, 9);
     print(head);
@@ -132,6 +176,9 @@ int main()
     cout << "length : " << getLength(head) << endl;
     // insertAtAnyPosition
     insertAtAnyPosition(tail, head, 1, 0);
+    print(head);
+
+    deleteNode(3, head, tail);
     print(head);
     cout << "head ->" << head->data << endl;
     cout << "tail ->" << tail->data << endl;
