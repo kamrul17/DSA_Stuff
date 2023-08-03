@@ -1,2 +1,1 @@
- cout << "head ->" << head->data << endl;
-    cout << "tail ->" << tail->data << endl;
+  insertData(3, 10, tail);
