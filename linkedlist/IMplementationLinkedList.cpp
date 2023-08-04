@@ -73,7 +73,7 @@ void insertAtAnyPosition(Node *&tail, Node *&head, int position, int data)
 
     Node *temp = head;
     int cnt = 1;
-    while (cnt < position - 1)
+    while (cnt < position)
     {
         temp = temp->next;
         cnt++;
@@ -111,7 +111,7 @@ void deleteNode(int position, Node *&head, Node *&tail)
         Node *previousNode = NULL;
 
         int cnt = 1;
-        while (cnt < position)
+        while (cnt < position - 1)
         {
             previousNode = currentNode;
             currentNode = currentNode->next;
@@ -160,18 +160,18 @@ int main()
     print(head);
 
     // insert at any position
-    insertAtAnyPosition(tail, head, 3, 1000);
+    insertAtAnyPosition(tail, head, 2, 1000);
     print(head);
-    insertAtAnyPosition(tail, head, 4, 2000);
-    print(head);
-    insertAtAnyPosition(tail, head, 5, 3000);
-    print(head);
+    // insertAtAnyPosition(tail, head, 4, 2000);
+    // print(head);
+    // insertAtAnyPosition(tail, head, 5, 3000);
+    // print(head);
     // cout << "head " << head->data << endl;
     // cout << "tail " << tail->data << endl;
-    deleteNode(5, head, tail);
-    // deleteNode(4, head);
-    print(head);
-    cout << "head " << head->data << endl;
-    cout << "tail " << tail->data << endl;
+    // deleteNode(5, head, tail);
+
+    // print(head);
+    // cout << "head " << head->data << endl;
+    // cout << "tail " << tail->data << endl;
     return 0;
 }
