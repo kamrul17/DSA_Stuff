@@ -1,4 +1,4 @@
-
+// given an arr where ever integer occurs twice and one integer occcur once,print that once integer;
 #include <iostream>
 using namespace std;
 int findInteger(int arr[], int n)
