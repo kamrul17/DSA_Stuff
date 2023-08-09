@@ -1,0 +1,2 @@
+ int health;
+    char level;

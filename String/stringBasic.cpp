@@ -18,11 +18,6 @@ void getReverse(char name[], int len)
     {
         swap(name[s++], name[end--]);
     }
-
-    // for (int i = end; i >= s; i--)
-    // {
-    //     cout << name[i];
-    // }
 }
 // TO CONVERT INTO LOWERCASE
 char toLowerCase(char ch)
