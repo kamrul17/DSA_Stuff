@@ -1,0 +1,4 @@
+mathematical formula=c*i+j
+where C= total no. column,
+i=row
+j=column
