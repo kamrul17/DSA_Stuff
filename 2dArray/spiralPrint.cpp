@@ -18,6 +18,7 @@ void spiralPrint(int arr[][4], int rows, int cols)
 
             count++;
         }
+
         startingRow++;
         // print ending col
         for (int i = startingRow; count < total && i <= endingRow; i++)
@@ -26,6 +27,7 @@ void spiralPrint(int arr[][4], int rows, int cols)
 
             count++;
         }
+
         endingCol--;
         // print ending row
         for (int i = endingCol; count < total && i >= startingCol; i--)
@@ -33,6 +35,7 @@ void spiralPrint(int arr[][4], int rows, int cols)
             cout << arr[endingRow][i] << " ";
             count++;
         }
+
         endingRow--;
         // print starting col
         for (int i = endingRow; count < total && i >= startingRow; i--)
@@ -40,6 +43,7 @@ void spiralPrint(int arr[][4], int rows, int cols)
             cout << arr[i][startingCol] << " ";
             count++;
         }
+
         startingCol++;
     }
 }
