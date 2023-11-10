@@ -32,7 +32,7 @@ int main()
         {
             cout << arr[i][j] << " ";
         }
-        // without this endl ,2d is not possible
+        // without this endl ,2d look is not possible
         cout << endl;
     }
 }
