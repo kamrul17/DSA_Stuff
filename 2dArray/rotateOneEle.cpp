@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
-// m=total no. of rows
-// n=total no. of cols
+//   row - Starting row index
+//     m - ending row index
+//     col - starting column index
+//     n - ending column index
 void rotateONeEle(int mat[][3], int m, int n)
 {
     int row = 0, col = 0;
@@ -10,7 +12,7 @@ void rotateONeEle(int mat[][3], int m, int n)
     {
         if (row + 1 == m || col + 1 == n)
             break;
-        // stored previous element
+        // stored previous element of 2nd row [0+1][0],this element will replace the first element of current row
         prev = mat[row + 1][col];
         //  moving element of first row
         for (int i = col; i < n; i++)
@@ -68,6 +70,8 @@ void printMatrix(int mat[][3], int m, int n)
 int main()
 {
     int mat[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    printMatrix(mat, 3, 3);
+    cout << endl;
     rotateONeEle(mat, 3, 3);
     printMatrix(mat, 3, 3);
     return 0;
