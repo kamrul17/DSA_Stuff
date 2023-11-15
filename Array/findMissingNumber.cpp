@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 using namespace std;
 
 int findMissingNumber(int arr[], int n)
@@ -7,11 +7,15 @@ int findMissingNumber(int arr[], int n)
    {
       //    check no. exist or not
       int flag = 0;
-      for (int j = 0; j < n; j++)
+      for (int j = 0; j < n - 1; j++)
       {
+         // cout << "innerLoop" << endl;
          if (arr[j] == i)
+         {
             flag = 1;
-         break;
+            // break is used to reduce the tc
+            break;
+         }
       }
       if (flag == 0)
       {
@@ -22,11 +26,12 @@ int findMissingNumber(int arr[], int n)
 }
 int main()
 {
-   int arr[] = {1, 2, 4, 5};
+   int arr[] = {3, 1, 2, 5};
    int n = 5;
-   findMissingNumber(arr, n);
+   int ans = findMissingNumber(arr, n);
+   cout << ans;
    return 0;
-}*/
+}
 // BETTER APPROACH USING HASHING
 /*#include <iostream>
 using namespace std;
@@ -79,7 +84,7 @@ int main()
    return 0;
 }*/
 // OPTIMAL 2 USING XOR (same no.->0)
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 void findMissingNumber(int arr[], int n)
@@ -109,4 +114,4 @@ int main()
    // int ans = findMissingNumber(arr, n);
    // cout << "missing number is :" << ans << endl;
    return 0;
-}
+}*/
