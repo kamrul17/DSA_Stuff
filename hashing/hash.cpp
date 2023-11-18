@@ -19,6 +19,5 @@ int main()
         cin >> num;
         cout << hash[num] << " ";
     }
-
     return 0;
 }

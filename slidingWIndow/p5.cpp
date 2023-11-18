@@ -1,11 +1,10 @@
 // maximum of all subarray of size k
 // BRUTE FORCE
-/*#include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
+/*
 void findMaxOfSubarrays(int arr[], int n, int k)
 {
-
 
     for (int i = 0; i <= n - k; ++i)
     {
@@ -23,8 +22,10 @@ void findMaxOfSubarrays(int arr[], int n, int k)
 
 int main()
 {
-    int k = 3;
-    int arr[] = {2, 9, 5, 6, 2, 3, 8};
+    int k = 1;
+    int arr[] = {2};
+    // int k = 3;
+    // int arr[] = {2, 9, 5, 6, 2, 3, 8};
     int n = sizeof(arr) / sizeof(int);
     findMaxOfSubarrays(arr, n, k);
 
@@ -33,8 +34,6 @@ int main()
 // SLIDING WINDOW
 
 // MAXIMUM SUM SUBARRAY OF SIZE K
-#include <iostream>
-using namespace std;
 
 vector<int> max_of_subarrays(vector<int> arr, int n, int k)
 {
@@ -42,10 +41,13 @@ vector<int> max_of_subarrays(vector<int> arr, int n, int k)
     deque<int> q;
     int i = 0, j = 0;
     vector<int> res;
-    while (j < n)
+    while (j < n - 1)
     {
         while (!q.empty() && q.back() < arr[j])
+        {
             q.pop_back();
+        }
+
         q.push_back(arr[j]);
         if (j - i + 1 < k)
             j++;
@@ -63,10 +65,14 @@ vector<int> max_of_subarrays(vector<int> arr, int n, int k)
 
 int main()
 {
-    int arr[] = {2, 3, 1, 3, 4, 5, 9};
-    int n = sizeof(arr) / sizeof(int);
+    vector<int> arr = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13};
+    int n = arr.size();
     int k = 3;
-    int sum = solve(arr, n, k);
-    cout << sum;
+    vector<int> ans = max_of_subarrays(arr, n, k);
+    for (auto i : ans)
+    {
+        std::cout << i << " ";
+    }
+
     return 0;
 }

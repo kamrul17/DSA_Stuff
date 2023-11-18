@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
     int n;
@@ -19,12 +18,12 @@ int main()
     {
         cout << it.first << " " << it.second << endl;
     }
-    int q;
-    cin >> q;
-    while (q--)
-    {
-        int num;
-        cin >> num;
-        cout << mpp[num] << endl;
-    }
+    // int q;
+    // cin >> q;
+    // while (q--)
+    // {
+    //     int num;
+    //     cin >> num;
+    //     cout << mpp[num] << endl;
+    // }
 }
