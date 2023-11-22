@@ -20,7 +20,7 @@ bool checkPalindrome(char name[], int len)
     int e = len - 1;
     while (s <= e)
     {
-        if (name[s] != name[e])
+        if (toLowerCase(name[s]) != toLowerCase(name[e]))
         {
             return 0;
         }
@@ -72,12 +72,12 @@ int getLenth(char name[])
 }
 int main()
 {
-    char name[20];
-    cin >> name;
+    char name[20] = "race e car";
+    // cin >> name;
     // int len = name.length();
     int len = getLenth(name);
     cout << "length of string: " << len << endl;
-    if (toLowerCase(checkPalindrome(name, len)))
+    if (checkPalindrome(name, len))
     {
         cout << "palindrome";
     }
