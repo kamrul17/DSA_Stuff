@@ -21,7 +21,7 @@ int secondlarge(int *arr, int n)
     }
     return Secondlargest;
 }
-int secondsmall(int *arr, int n)
+/*int secondsmall(int *arr, int n)
 {
     int smallest = arr[0];
     int Secondsmallest = INT8_MAX;
@@ -40,16 +40,17 @@ int secondsmall(int *arr, int n)
         }
     }
     return Secondsmallest;
-}
+}*/
 int main()
 {
-    int arr[] = {3, 22, 4, 1, 6, 7};
+    int arr[] = {8, 8, 2, 4, 5, 5, 1};
+    // int arr[] = {3, 22, 4, 1, 6, 7};
     int n = sizeof(arr) / sizeof(arr[0]);
     int Secondlargest = secondlarge(arr, n);
-    int SecondSmallest = secondsmall(arr, n);
+    // int SecondSmallest = secondsmall(arr, n);
     cout << Secondlargest;
-    cout << endl;
-    cout << SecondSmallest;
+    // cout << endl;
+    // cout << SecondSmallest;
 
     return 0;
 }
